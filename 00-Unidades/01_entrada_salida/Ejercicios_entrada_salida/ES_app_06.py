@@ -47,7 +47,7 @@ class App(customtkinter.CTk):
 
         resultado = operador_a + operador_b
 
-        alert ( "Resultado" , "El resultado de la suma es :"  + str(resultado) )
+        alert ( "Resultado" , "El resultado de la suma es : {0} " .format( resultado))
 
         
 

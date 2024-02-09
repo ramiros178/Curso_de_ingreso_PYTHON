@@ -48,7 +48,7 @@ class App(customtkinter.CTk):
 
         resultado = operarador_a % operarador_b
 
-        alert ("Resto" , "EL resultado de dividir " + str(operarador_a) + " por " + str(operarador_b) + " es :" + str(resultado))
+        alert ("Resto" , "EL resultado de dividir   {0}   por   {1}   es :  {2}".format( operarador_a , operarador_b, resultado))
         
     
 if __name__ == "__main__":
