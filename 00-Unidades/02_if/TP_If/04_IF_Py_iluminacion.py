@@ -5,8 +5,8 @@ from tkinter.simpledialog import askstring as prompt
 import customtkinter
 
 '''
-nombre:
-apellido:
+nombre: Ramiro  
+apellido: Suarez
 ---
 TP: IF_Iluminacion
 ---
@@ -43,8 +43,112 @@ class App(customtkinter.CTk):
 
 
     def btn_calcular_on_click(self):
-        pass
+        marca = self.combobox_marca.get()
+        cantidad = self.combobox_cantidad.get()
         
+        
+        
+
+        lamparitas = int(cantidad)
+        valor = 800
+        total = 800 * lamparitas
+        
+        
+        
+        
+        if (lamparitas >= 6):
+            alert("valor", total -(total * 0.50))
+        
+
+
+        if (lamparitas == 5):
+            if(marca == "ArgentinaLuz"):
+                alert("Valor", total - (total * 0.40))
+            else:
+                alert("valor", total - (total * 0.30)) 
+        else:
+            ("Valor", total) 
+
+        if(lamparitas == 4):
+            if(marca == "ArgentinaLuz" or marca == "FelipeLamparas"):
+                alert("Valor", total - (total * 0.25))
+            else:
+                alert("Valor", total - (total * 0.20))
+        else:
+            ("Valor",total)
+
+        if(lamparitas == 3):
+            if(marca == "ArgentinaLuz"):
+                alert("Valor", total -(total * 0.15))
+            elif(marca == "FelipeLamparas"):
+                alert("Valor", total -(total * 0.10 ))
+            else:
+                alert("valor", total -(total * 0.05))
+        else:
+            ("valor", total)  
+
+                          
+
+
+
+
+
+        
+
+                    
+
+        
+       
+       
+
+     
+                
+
+
+        
+
+            
+
+              
+        
+            
+
+        
+
+        
+
+        
+
+
+               
+
+        
+         
+
+        
+
+ 
+       
+                        
+    
+
+          
+        
+           
+                         
+
+
+        
+        
+        
+        
+               
+
+        
+
+               
+
+
     
 if __name__ == "__main__":
     app = App()
