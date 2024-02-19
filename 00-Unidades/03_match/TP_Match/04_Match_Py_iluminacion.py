@@ -43,7 +43,61 @@ class App(customtkinter.CTk):
 
 
     def btn_calcular_on_click(self):
-        pass
+        marcas = self.combobox_marca.get()
+        cantidad =int(self.combobox_cantidad.get())
+
+        lamparas = int(cantidad)
+        total = 800 * cantidad
+        
+        match(marcas):
+            case "ArgentinaLuz":
+                match(lamparas):
+                    case 6|7|8|9|10|11|12:
+                        alert("total", total -(total * 0.50))
+                    case 5:
+                        alert("total", total -(total * 0.40))
+                    case 4:
+                        alert("total", total -(total * 0.25))
+                    case 3:
+                        alert("total", total -(total * 0.15))
+                    
+            case "FelipeLamparas":
+                match(lamparas):
+                    case 6|7|8|9|10|11|12:
+                        alert("total", total -(total * 0.50))
+                    case 5:
+                        alert("total", total -(total * 0.30))
+                    case 4:
+                        alert("total", total -(total * 0.25))
+                    case 3:
+                        alert("total", total -(total * 0.10))
+                    
+            case "JeLuz"|"HazIluminacion"|"Osram":
+                match(lamparas):
+                    case 6|7|8|9|10|11|12:
+                        alert("total", total -(total * 0.50))
+                    case 5:
+                        alert("total", total -(total * 0.30))
+                    case 4:
+                        alert("total", total -(total * 0.20))
+                    case 3:
+                        alert("total", total -(total * 0.05))
+                    case _:
+                        alert("total", total)
+        
+            
+                        
+            
+                                 
+                                
+
+         
+
+
+
+    
+
+
         
     
 if __name__ == "__main__":

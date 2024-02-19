@@ -44,20 +44,26 @@ class App(customtkinter.CTk):
 
         if (altura < 160 ):
             alert("Base", "La posición es Base")
+        else:
+            if ( altura <= 179):
+             alert("Escolta", "La posición es escolta")
+            else:
+                if ( altura <= 199 ):
+                 alert("Alero","La posición es alero")
+                else:
+                   alert("altura", "Ala pivot o pivot")
 
-        if (altura > 159 and altura < 180):
-            alert("Escolta", "La posición es escolta")
 
-        if (altura > 179 and altura < 200 ):
-            alert("Alero","La posición es alero")
-        if ( altura >= 200):
-            alert("Ala pivot", "La posición es ala-pívot o pívot")   
+if __name__ == "__main__":
+    app = App()
+    app.geometry("300x300")
+    app.mainloop()
+        
+
+        
+         
 
 
         
         
     
-if __name__ == "__main__":
-    app = App()
-    app.geometry("300x300")
-    app.mainloop()

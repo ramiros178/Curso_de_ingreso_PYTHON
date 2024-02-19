@@ -48,14 +48,15 @@ class App(customtkinter.CTk):
        
 
         if( edad > 15 and nativo == "NATIVO"):
-            alert("edad", "Ud puede votar")
-
-        elif( edad > 17 and nativo == "NATURALIZADO"):
-            alert("edad", "Ud puede votar")
-
+            mensaje= "Ud puede votar"
         else:
-            alert("vOTAR", "Ud no puede votar")
-             
+            if( edad > 17 and nativo == "NATURALIZADO"):
+               mensaje ="Ud puede votar"
+
+            else:
+                mensaje= "Ud no puede votar"
+
+        alert( "edad" , mensaje)
     
 if __name__ == "__main__":
     app = App()
