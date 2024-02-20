@@ -51,35 +51,45 @@ class App(customtkinter.CTk):
         lamparitas = int(cantidad)
 
         
-        total = 800 * lamparitas
+        
+        descuento = 0
+
+        
         
         
         if (lamparitas >= 6):
-            alert("valor", total -(total * 0.50))
+            descuento = 0.50
         else:
             if (lamparitas == 5 and marca == "ArgentinaLuz"):
-                alert("Valor", total - (total * 0.40))
+                descuento = 0.40
             else:
                 if (lamparitas == 5 and marca == "FelipeLamparas") or (lamparitas==5 and marca=="JeLuz") or (lamparitas == 5 and marca=="HazIluminacion") or (lamparitas == 5 and marca =="Osram"):
-                    alert("valor", total - (total * 0.30))
+                    descuento = 0.30
                 else: 
                     if(lamparitas == 4 and marca == "ArgentinaLuz") or (lamparitas == 4 and marca =="FelipeLamparas"):  
-                       alert("Valor", total - (total * 0.25))
+                       descuento = 0.25
                     else:
                         if((lamparitas == 4 and marca == "JeLuz") or ( lamparitas == 4 and marca=="HazIluminacion" or marca =="Osram")):
-                            alert("Valor", total - (total * 20 / 100))
+                            descuento = 0.20
                         else:
                             if(lamparitas == 3 and marca == "ArgentinaLuz"):
-                               alert("Valor", total - (total * 0.15))
+                               descuento = 0.15
                             else:
                                 if(lamparitas == 3 and marca == "FelipeLamparas"):
-                                    alert("Valor", total - (total * 0.10 ))
+                                    descuento = 0.10 
                                 else:
                                     if(lamparitas == 3 and marca =="JeLuz") or (lamparitas == 3 and marca =="HazIluminacion") or (lamparitas ==4 and marca== "Osram"):
-                                        alert("valor",total - (total * 0.05))
+                                        descuento = 0.05   
                                    
-        if (total > 4000):
-            alert("total", total -(total * 0.05))
+        valor = 800
+        total = lamparitas * 800
+        valor_descuento = total - (total * descuento)                
+
+        
+        alert( "Valor", valor_descuento )
+
+        if(valor_descuento > 4000):
+            valor_descuento * 0.05
         
                                         
 

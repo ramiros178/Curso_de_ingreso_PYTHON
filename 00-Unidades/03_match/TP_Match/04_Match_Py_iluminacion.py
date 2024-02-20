@@ -47,43 +47,58 @@ class App(customtkinter.CTk):
         cantidad =int(self.combobox_cantidad.get())
 
         lamparas = int(cantidad)
-        total = 800 * cantidad
+        descuento = 0
+       
+        
         
         match(marcas):
             case "ArgentinaLuz":
                 match(lamparas):
                     case 6|7|8|9|10|11|12:
-                        alert("total", total -(total * 0.50))
+                        descuento = 0.50
                     case 5:
-                        alert("total", total -(total * 0.40))
+                        descuento = 0.40
                     case 4:
-                        alert("total", total -(total * 0.25))
+                        descuento = 0.25
                     case 3:
-                        alert("total", total -(total * 0.15))
+                        descuento = 0.15
                     
             case "FelipeLamparas":
                 match(lamparas):
                     case 6|7|8|9|10|11|12:
-                        alert("total", total -(total * 0.50))
+                        descuento = 0.50
                     case 5:
-                        alert("total", total -(total * 0.30))
+                        descuento = 0.30
                     case 4:
-                        alert("total", total -(total * 0.25))
+                        descuento = 0.25
                     case 3:
-                        alert("total", total -(total * 0.10))
+                        descuento = 0.10
                     
             case "JeLuz"|"HazIluminacion"|"Osram":
                 match(lamparas):
                     case 6|7|8|9|10|11|12:
-                        alert("total", total -(total * 0.50))
+                        descuento = 0.50
                     case 5:
-                        alert("total", total -(total * 0.30))
+                        descuento = 0.30
                     case 4:
-                        alert("total", total -(total * 0.20))
+                        descuento = 0.20
                     case 3:
-                        alert("total", total -(total * 0.05))
-                    case _:
-                        alert("total", total)
+                        descuento = 0.05
+                    
+
+        valor = 800
+        total = lamparas * 800
+        valor_descuento = total - (total * descuento)                
+
+        
+        alert( "Valor", valor_descuento )
+
+        if(valor_descuento > 4000):
+            valor_descuento * 0.05
+                         
+
+        
+                        
         
             
                         
